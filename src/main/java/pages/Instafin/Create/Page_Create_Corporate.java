@@ -15,6 +15,8 @@ public class Page_Create_Corporate {
 	By buttonCorporateMain = By.cssSelector("li a[href='/client/corporate/create']");
 	By buttonCentreMain = By.cssSelector("a[href='/centre/create']");
 	
+	//Element of Corporate creation header
+	By verifyPage_CorporateClientCreation = By.xpath("//*[@id=\"content\"]/div[2]/div/div[1]/h2/strong");
 	
 	//Elements for Corporate Creation Form
 	By basicInfo_InputName = By.id("name");
@@ -31,10 +33,22 @@ public class Page_Create_Corporate {
 	By selectCentre_AssignTo = By.id("corporateClientCreateCentreId");
 	By select_typeof_Business_Additional = By.id("optionals_typeOfBusiness");
 	By inputTaxNumber_FinancialInformation = By.id("optionals_taxNumber");
-	By input_Profile_notes_Additional = By.id("contact_mobileNumber");
+	By input_Profile_notes_Additional = By.id("notes");
 	By input_CreationDate_Additional = By.id("contact_mobileNumber");
 	By button_Create = By.id("disableAfterClick");
-	By button_Cancel = By.cssSelector("a[href='/client/corporate/list']");
+	By button_Cancel = By.className("btn");
+	
+	//elements of client board for confirmation of corporate client creation 
+	By confirmationBoxForSucessfullCorporateCreation = By.id("content");
+	
+	//elements of error messages
+	By name_errormsg = By.xpath("//*[@id=\"content\"]/div[2]/div/div[2]/form/div[1]/fieldset[1]/div/div/div[2]/div");
+	By address_errormsg = By.xpath("//*[@id=\"content\"]/div[2]/div/div[2]/form/div[1]/fieldset[2]/div[2]/div/div[1]/div[2]/div");
+	By city_errormsg = By.xpath("//*[@id=\"content\"]/div[2]/div/div[2]/form/div[1]/fieldset[2]/div[2]/div/div[3]/div[2]/div");
+	By postal_errormsg = By.xpath("//*[@id=\"content\"]/div[2]/div/div[2]/form/div[1]/fieldset[2]/div[2]/div/div[4]/div[2]/div");
+	By country_errormsg = By.xpath("//*[@id=\"content\"]/div[2]/div/div[2]/form/div[1]/fieldset[2]/div[2]/div/div[5]/div[2]/div");
+	By branch_errormsg = By.xpath("//*[@id=\"content\"]/div[2]/div/div[2]/form/div[1]/fieldset[4]/div[1]/div[2]/div");
+	By typeOfBusiness_errormsg = By.xpath("//*[@id=\"content\"]/div[2]/div/div[2]/form/div[1]/fieldset[5]/div/div[2]/div");
 	
 	
 	//initiating webdriver from upper
@@ -51,7 +65,11 @@ public class Page_Create_Corporate {
 		driver.findElement(buttonCorporateMain).click();		
 	}
 
-
+	public void verify_Corporate_Client_Creation_Page() {
+		driver.findElement(verifyPage_CorporateClientCreation).isDisplayed();
+	}
+	
+	
 	public void Input_Name_BasicInfo(String name) {
 		driver.findElement(basicInfo_InputName).sendKeys(name);
 	}
@@ -94,7 +112,7 @@ public class Page_Create_Corporate {
 	}
 
 	public void Input_Email() {
-		driver.findElement(contactData_inputEmail).sendKeys("sampleTest@test.com");
+		driver.findElement(contactData_inputEmail).sendKeys("sampleTest2@test.com");
 		
 	}
 
@@ -138,8 +156,64 @@ public class Page_Create_Corporate {
 	}
 
 	public void Confirm_Submission_Form() {
-		// TODO Auto-generated method stub
+		driver.findElement(confirmationBoxForSucessfullCorporateCreation).isDisplayed();
 		
+	}
+
+
+	public void Verify_All_Required_Fields_Showing() {
+		driver.findElement(name_errormsg).isDisplayed();
+		driver.findElement(address_errormsg).isDisplayed();
+		driver.findElement(city_errormsg).isDisplayed();
+		driver.findElement(postal_errormsg).isDisplayed();
+		driver.findElement(country_errormsg).isDisplayed();
+		driver.findElement(branch_errormsg).isDisplayed();
+		driver.findElement(typeOfBusiness_errormsg).isDisplayed();	
+	}
+
+
+	public void Verify_requiredFields_After_Name_Given() {
+		driver.findElement(address_errormsg).isDisplayed();
+		driver.findElement(city_errormsg).isDisplayed();
+		driver.findElement(postal_errormsg).isDisplayed();
+		driver.findElement(country_errormsg).isDisplayed();
+		driver.findElement(branch_errormsg).isDisplayed();
+		driver.findElement(typeOfBusiness_errormsg).isDisplayed();
+	}
+
+
+	public void Verify_requiredFields_After_Adress_Given() {
+		driver.findElement(city_errormsg).isDisplayed();
+		driver.findElement(postal_errormsg).isDisplayed();
+		driver.findElement(country_errormsg).isDisplayed();
+		driver.findElement(branch_errormsg).isDisplayed();
+		driver.findElement(typeOfBusiness_errormsg).isDisplayed();
+	}
+
+
+	public void Verify_requiredFields_After_City_Given() {
+		driver.findElement(postal_errormsg).isDisplayed();
+		driver.findElement(country_errormsg).isDisplayed();
+		driver.findElement(branch_errormsg).isDisplayed();
+		driver.findElement(typeOfBusiness_errormsg).isDisplayed();
+	}
+
+
+	public void Verify_requiredFields_After_Postal_Given() {
+		driver.findElement(country_errormsg).isDisplayed();
+		driver.findElement(branch_errormsg).isDisplayed();
+		driver.findElement(typeOfBusiness_errormsg).isDisplayed();
+	}
+
+
+	public void Verify_requiredFields_After_Country_Given() {
+		driver.findElement(branch_errormsg).isDisplayed();
+		driver.findElement(typeOfBusiness_errormsg).isDisplayed();
+	}
+
+
+	public void Verify_requiredFields_After_Branch_Given() {
+		driver.findElement(typeOfBusiness_errormsg).isDisplayed();
 	}
 	
 	

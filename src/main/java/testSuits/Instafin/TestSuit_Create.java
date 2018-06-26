@@ -50,8 +50,6 @@ public class TestSuit_Create {
 		Thread.sleep(1000);
 	}
 	
-	
-	
 	@Test
 	public void verify_all_subSection_Opening() throws InterruptedException {
 		create_Corporate_PageElements.open_Create_Section();
@@ -71,6 +69,8 @@ public class TestSuit_Create {
 		create_Corporate_PageElements.open_Create_Section();
 		Thread.sleep(1000);
 		create_Corporate_PageElements.open_corporate_client_creation_page();
+		create_Corporate_PageElements.verify_Corporate_Client_Creation_Page();
+		
 		create_Corporate_PageElements.Input_Name_BasicInfo("Mehedi");
 		create_Corporate_PageElements.Input_Street_Address("Elephant Road, Dhaka, Bangladesh");
 		create_Corporate_PageElements.Input_State_Province("Dhaka");
@@ -80,20 +80,72 @@ public class TestSuit_Create {
 		create_Corporate_PageElements.Select_MobileNumber_Code();
 		create_Corporate_PageElements.Input_Mobile_Number();
 		create_Corporate_PageElements.Input_Email();
-		
+		Thread.sleep(1000);
 		create_Corporate_PageElements.Branch_Selection();
 		create_Corporate_PageElements.Credit_Officer_Selection();
 		//create_Corporate_PageElements.Centre_Selection();
-		
+		Thread.sleep(1000);
 		create_Corporate_PageElements.BusinessType_Selection();
-		
+		Thread.sleep(1000);
 		create_Corporate_PageElements.TaxNumber();
-		
+		Thread.sleep(1000);
 		create_Corporate_PageElements.ProfileNotes();
 		create_Corporate_PageElements.CreationDate();
+		Thread.sleep(1000);
 		create_Corporate_PageElements.Submission_User_Creation_Form();
-		//create_Corporate_PageElements.Confirm_Submission_Form();
+		Thread.sleep(1000);
+		create_Corporate_PageElements.Confirm_Submission_Form();
 	}
+	
+	@Test
+	public void Verify_Required_Messages_Corporate() throws InterruptedException {
+		create_Corporate_PageElements.open_Create_Section();
+		Thread.sleep(1000);
+		create_Corporate_PageElements.open_corporate_client_creation_page();
+		create_Corporate_PageElements.verify_Corporate_Client_Creation_Page();
+		
+		create_Corporate_PageElements.Submission_User_Creation_Form();
+		Thread.sleep(1000);
+		create_Corporate_PageElements.Verify_All_Required_Fields_Showing();
+		Thread.sleep(1000);
+		
+		create_Corporate_PageElements.Input_Name_BasicInfo("Mehedi");
+		create_Corporate_PageElements.Submission_User_Creation_Form();
+		Thread.sleep(1000);
+		create_Corporate_PageElements.Verify_requiredFields_After_Name_Given();
+		
+		create_Corporate_PageElements.Input_Street_Address("Elephant Road, Dhaka, Bangladesh");
+		create_Corporate_PageElements.Submission_User_Creation_Form();
+		Thread.sleep(1000);
+		create_Corporate_PageElements.Verify_requiredFields_After_Adress_Given();
+		
+		create_Corporate_PageElements.Input_City_town("Dhaka");
+		create_Corporate_PageElements.Submission_User_Creation_Form();
+		Thread.sleep(1000);
+		create_Corporate_PageElements.Verify_requiredFields_After_City_Given();
+		
+		create_Corporate_PageElements.Input_Postal_Zipcode("1100");
+		create_Corporate_PageElements.Submission_User_Creation_Form();
+		Thread.sleep(1000);
+		create_Corporate_PageElements.Verify_requiredFields_After_Postal_Given();
+		
+		create_Corporate_PageElements.Input_Country();
+		create_Corporate_PageElements.Submission_User_Creation_Form();
+		Thread.sleep(1000);
+		create_Corporate_PageElements.Verify_requiredFields_After_Country_Given();
+		
+		create_Corporate_PageElements.Branch_Selection();
+		create_Corporate_PageElements.Submission_User_Creation_Form();
+		Thread.sleep(1000);
+		create_Corporate_PageElements.Verify_requiredFields_After_Branch_Given();
+		
+		create_Corporate_PageElements.BusinessType_Selection();
+		create_Corporate_PageElements.Submission_User_Creation_Form();
+		Thread.sleep(1000);
+		
+		create_Corporate_PageElements.Confirm_Submission_Form();
+	}
+	
 	
 	@AfterTest
 	public void afterTesting() {

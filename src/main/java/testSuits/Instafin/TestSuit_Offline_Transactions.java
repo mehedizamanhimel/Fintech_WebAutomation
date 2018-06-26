@@ -37,7 +37,7 @@ public class TestSuit_Offline_Transactions {
 	
 	//Area to write automated test cases using TestNG framework
 	@Test
-	public void verify_Elements_displayed() throws InterruptedException {
+	public void verify_Offline_Transaction_Filter_Working() throws InterruptedException {
 		offline_Transaction_PageElements.open_Main_Button();
 		offline_Transaction_PageElements.select_Level_Type();
 		Thread.sleep(1000);

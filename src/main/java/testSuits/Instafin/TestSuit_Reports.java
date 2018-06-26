@@ -45,16 +45,49 @@ public class TestSuit_Reports {
 	//Area to write automated test cases using TestNG framework
 	@Test
 	public void verify_Elements_displayed() {
+		accountActionLog_PageElements.click_Rerports_main();
+		accountActionLog_PageElements.click_AccountAction_main();
+		accountActionLog_PageElements.verify_all_elements_present();
+	}
+	
+	@Test
+	public void filter_AccountAction_Log() throws InterruptedException {
+		accountActionLog_PageElements.click_Rerports_main();
+		accountActionLog_PageElements.click_AccountAction_main();
+		accountActionLog_PageElements.provide_fromDate();
+		Thread.sleep(3000);
+		accountActionLog_PageElements.provide_toDate();
+		Thread.sleep(3000);
+		accountActionLog_PageElements.selectBranch();
+		accountActionLog_PageElements.selectCreditOfficer();
+		accountActionLog_PageElements.selectCentre();
+		accountActionLog_PageElements.selectActionType();
+		accountActionLog_PageElements.selectProducts();
+		accountActionLog_PageElements.clickCheckbox();
+		accountActionLog_PageElements.selectUser();
+		accountActionLog_PageElements.clickSubmit();
+		accountActionLog_PageElements.verifyFilterSubmit();
+	}
+	
+	
+	@Test
+	public void filter_error_message_date() throws InterruptedException {
+		accountActionLog_PageElements.click_Rerports_main();
+		accountActionLog_PageElements.click_AccountAction_main();
+		accountActionLog_PageElements.provide_wrongfromDate("22022018");
+		accountActionLog_PageElements.provide_wrongToDate("20022018");
+		accountActionLog_PageElements.clickSubmit();
+		Thread.sleep(2000);
+		accountActionLog_PageElements.verify_ErrorMessage_date();
 		
 	}
 	
 	
 	
-	
 	@AfterTest
 	public void afterTesting() throws InterruptedException {
-		Thread.sleep(5000);
-		login_PageElements.logoutFromApp();
+		Thread.sleep(2000);
+		//login_PageElements.logoutFromApp();
 		driver.close();
 	}
 }
