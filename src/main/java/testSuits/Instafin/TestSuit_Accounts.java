@@ -1,6 +1,8 @@
 package testSuits.Instafin;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -21,13 +23,14 @@ public class TestSuit_Accounts {
 	String baseurl = "https://meheditest.instafin.info/user/login";
 	Page_loginPage login_PageElements = new Page_loginPage(driver);
 	Page_DashBoard homePage_Elements = new Page_DashBoard(driver);
-	Page_Accounts_All_Accounts accounts_All_Accounts_PageElements = new Page_Accounts_All_Accounts(driver);
-	Page_Accounts_Loan_Accounts accounts_LoanAccounts_PageElements = new Page_Accounts_Loan_Accounts(driver);
+	Page_Accounts_All_Accounts accounts_All_Accounts = new Page_Accounts_All_Accounts(driver);
+	Page_Accounts_Loan_Accounts accounts_LoanAccounts = new Page_Accounts_Loan_Accounts(driver);
 
 	
 	
 	@BeforeTest
 	public void beforeTesting() throws IOException {
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		testData = new LoadPropertiesFile_Instafin();
 		driver.manage().window().maximize();
 		driver.get(testData.properties.getProperty("baseurl"));
@@ -40,8 +43,33 @@ public class TestSuit_Accounts {
 	//Area to write automated test cases using TestNG framework
 	
 	@Test
-	public void Verify_Elements_Of_Accounts() {
-		
+	public void Verify_Elements_is_displayed() throws InterruptedException {
+		accounts_All_Accounts.Open_Accounts_Main_Section();
+		Thread.sleep(1000);
+		accounts_All_Accounts.Open_All_Accounts_SubSection();
+		Thread.sleep(1000);
+		accounts_All_Accounts.VerifyElementsAreAvailable();
+		Thread.sleep(1000);
+	}
+	
+	
+	@Test
+	public void Filter_All_Accounts() throws InterruptedException {
+		accounts_All_Accounts.Open_Accounts_Main_Section();
+		Thread.sleep(1000);
+		accounts_All_Accounts.Open_All_Accounts_SubSection();
+		Thread.sleep(1000);
+		accounts_All_Accounts.Select_Branch();
+		accounts_All_Accounts.Select_CreditOfficer();
+		accounts_All_Accounts.Select_Centre();
+		//Thread.sleep(1000);
+		accounts_All_Accounts.Select_AccountType();
+		accounts_All_Accounts.Select_AccountStatus();
+		accounts_All_Accounts.Select_Product();
+		//Thread.sleep(1000);
+		accounts_All_Accounts.SubmitFilter();
+		accounts_All_Accounts.Verify_FilterSubmission();
+		//Thread.sleep(1000);
 	}
 	
 	
@@ -49,8 +77,9 @@ public class TestSuit_Accounts {
 	
 	@AfterTest
 	public void afterTesting() throws InterruptedException {
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		login_PageElements.logoutFromApp();
+		Thread.sleep(2000);
 		driver.close();
 	}
 }

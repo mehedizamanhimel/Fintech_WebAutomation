@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testSuits.Instafin.TestSuit_Reports">
+      <class name="testSuits.Instafin.TestSuit_Accounts">
         <methods>
-          <include name="filter_error_message_date"/>
           <include name="afterTesting"/>
+          <include name="Filter_All_Accounts"/>
           <include name="beforeTesting"/>
         </methods>
-      </class> <!-- testSuits.Instafin.TestSuit_Reports -->
+      </class> <!-- testSuits.Instafin.TestSuit_Accounts -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

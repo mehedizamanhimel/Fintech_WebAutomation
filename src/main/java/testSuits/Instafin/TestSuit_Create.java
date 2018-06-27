@@ -1,6 +1,7 @@
 package testSuits.Instafin;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -32,6 +33,7 @@ public class TestSuit_Create {
 	
 	@BeforeTest
 	public void beforeTesting() throws IOException {
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		testData = new LoadPropertiesFile_Instafin();
 		driver.manage().window().maximize();
 		driver.get(testData.properties.getProperty("baseurl"));

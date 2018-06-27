@@ -1,6 +1,8 @@
 package testSuits.Instafin;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -28,6 +30,7 @@ public class TestSuit_Login {
 	
 	@BeforeTest
 	public void beforeTesting() throws IOException {
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		//driver.manage().window().fullscreen();
 		driver.get(testData.properties.getProperty("baseurl"));
