@@ -53,7 +53,7 @@ public class TestSuit_Accounts {
 	}
 	
 	
-	@Test
+	@Test(priority=0)
 	public void Filter_All_Accounts() throws InterruptedException {
 		accounts_All_Accounts.Open_Accounts_Main_Section();
 		Thread.sleep(1000);
@@ -70,6 +70,18 @@ public class TestSuit_Accounts {
 		accounts_All_Accounts.SubmitFilter();
 		accounts_All_Accounts.Verify_FilterSubmission();
 		//Thread.sleep(1000);
+	}
+	
+	@Test(priority=1)
+	public void Edit_Accounts() throws InterruptedException {
+		accounts_All_Accounts.Open_Accounts_Main_Section();
+		Thread.sleep(1000);
+		accounts_All_Accounts.Open_All_Accounts_SubSection();
+		Thread.sleep(1000);
+		accounts_All_Accounts.Select_Branch();
+		accounts_All_Accounts.SubmitFilter();
+		Thread.sleep(1000);
+		accounts_All_Accounts.open_EditSection();
 	}
 	
 	

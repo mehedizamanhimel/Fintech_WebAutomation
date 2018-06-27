@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -20,6 +21,8 @@ public class TestSuit_BulkActions {
 	static LoadPropertiesFile_Instafin testData;
 	
 	WebDriver driver = new ChromeDriver();
+
+
 	String baseurl = "https://meheditest.instafin.info/user/login";
 	Page_loginPage login_PageElements = new Page_loginPage(driver);
 	Page_DashBoard homePage_Elements = new Page_DashBoard(driver);
@@ -30,6 +33,7 @@ public class TestSuit_BulkActions {
 	
 	@BeforeTest
 	public void beforeTesting() throws IOException {
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		testData = new LoadPropertiesFile_Instafin();
 		driver.manage().window().maximize();
 		//driver.get(testData.properties.getProperty("baseurl"));
@@ -38,11 +42,11 @@ public class TestSuit_BulkActions {
 		login_PageElements.inputPassword(testData.properties.getProperty("password"));
 		login_PageElements.clickOnLoginButton();
 		homePage_Elements.verifyLogin();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
 	}
 	
-	//Area to write automated test cases using TestNG framework
-	@Test
+	
+	@Test(priority=4)
 	public void CreateLoans() throws InterruptedException {
 		bulk_CreateLone.click_BulkActions_MainButton();
 		Thread.sleep(1000);
@@ -58,39 +62,77 @@ public class TestSuit_BulkActions {
 		Thread.sleep(1000);
 	}
 	
-	
-	@Test
+	/*@Test
 	public void verify_Elements_displayed() throws InterruptedException {
 		bulk_CombineSheet.click_BulkActions_MainButton();
-		bulk_CombineSheet.verifybuttonavailable();
-		
+		bulk_CombineSheet.verifybuttonavailable();	
+	}*/
+	
+	@Test(priority=0)
+	public void verifyErrorForBlankSubmission() {
+		bulk_CombineSheet.click_BulkActions_MainButton();
+		bulk_CombineSheet.open_CombineSheet();
+		bulk_CombineSheet.Submit_Filter();
+		bulk_CombineSheet.verifyErrorAfterSubmitFilter();
 	}
 	
-	@Test
+	@Test(priority=1)
+	public void Open_Combine_Sheet() throws InterruptedException{
+		bulk_CombineSheet.click_BulkActions_MainButton();
+		bulk_CombineSheet.open_CombineSheet();
+		bulk_CombineSheet.select_Branch();
+		bulk_CombineSheet.Submit_Filter();
+		bulk_CombineSheet.Verify_CombineSheet_Opening();
+	}
+	
+	
+	//@Test(priority=2)
 	public void verify_Combine_Sheet_For_Bulk_Payments() throws InterruptedException {
 		bulk_CombineSheet.click_BulkActions_MainButton();
 		bulk_CombineSheet.verifybuttonavailable();
 		bulk_CombineSheet.open_CombineSheet();
-		//bulk_CombineSheet.Deposite_Type();
-		//bulk_CombineSheet.input_Date();
-		bulk_CombineSheet.select_Branch();
-		Thread.sleep(2000);
-		/*bulk_CombineSheet.check_Exclude_Arrears();
+		
+		bulk_CombineSheet.input_Date();
+		bulk_CombineSheet.check_Exclude_Arrears();
 		bulk_CombineSheet.checl_Inlude_Paid_Prepaid();
 		
+		bulk_CombineSheet.select_Branch();
+		Thread.sleep(1000);
 		bulk_CombineSheet.Select_Credit_Officer();
+		Thread.sleep(1000);
 		bulk_CombineSheet.Select_Centre();
-		bulk_CombineSheet.Deposite_Type();
+		Thread.sleep(1000);
 		bulk_CombineSheet.Select_Products();
+		Thread.sleep(1000);
 		bulk_CombineSheet.Select_Clients();
+		Thread.sleep(5000);
+		bulk_CombineSheet.Deposite_Type();
+		Thread.sleep(1000);		
+	}
+	
+	@Test(priority=3)
+	public void Enter_Payments() throws InterruptedException {
+		bulk_CombineSheet.click_BulkActions_MainButton();
+		bulk_CombineSheet.open_CombineSheet();
+		Thread.sleep(1000);
+		bulk_CombineSheet.select_Branch();
 		bulk_CombineSheet.Submit_Filter();
-		bulk_CombineSheet.Verify_Filter_Submission();*/
+		Thread.sleep(1000);
+		bulk_CombineSheet.select_CheckBOX_CLient();
+		bulk_CombineSheet.Enter_Payment();
+		Thread.sleep(1000);
+		bulk_CombineSheet.deposit_Payment_Method();
+		bulk_CombineSheet.input_referenceNumber();
+		bulk_CombineSheet.input_Note();
+		//bulk_CombineSheet.successfull_Verification();
+		
+		Thread.sleep(1000);
 	}
 	
 	
 	@AfterTest
 	public void afterTesting() throws InterruptedException {
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		driver.close();
 	}
 

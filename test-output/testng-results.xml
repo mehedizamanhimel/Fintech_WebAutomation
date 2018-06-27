@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="1" total="2" passed="0">
+<testng-results skipped="0" failed="1" ignored="3" total="4" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="18955" started-at="2018-06-27T05:04:00Z" finished-at="2018-06-27T05:04:19Z">
+  <suite name="Default suite" duration-ms="29471" started-at="2018-06-27T22:46:31Z" finished-at="2018-06-27T22:47:00Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="18955" started-at="2018-06-27T05:04:00Z" finished-at="2018-06-27T05:04:19Z">
-      <class name="testSuits.Instafin.TestSuit_Accounts">
-        <test-method status="PASS" signature="beforeTesting()[pri:0, instance:testSuits.Instafin.TestSuit_Accounts@72c8e7b]" name="beforeTesting" is-config="true" duration-ms="10359" started-at="2018-06-27T05:04:00Z" finished-at="2018-06-27T05:04:10Z">
+    <test name="Default test" duration-ms="29471" started-at="2018-06-27T22:46:31Z" finished-at="2018-06-27T22:47:00Z">
+      <class name="testSuits.Instafin.TestSuit_BulkActions">
+        <test-method status="PASS" signature="beforeTesting()[pri:0, instance:testSuits.Instafin.TestSuit_BulkActions@6cd24612]" name="beforeTesting" is-config="true" duration-ms="11671" started-at="2018-06-27T22:46:31Z" finished-at="2018-06-27T22:46:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTesting -->
-        <test-method status="FAIL" signature="Filter_All_Accounts()[pri:0, instance:testSuits.Instafin.TestSuit_Accounts@72c8e7b]" name="Filter_All_Accounts" duration-ms="3538" started-at="2018-06-27T05:04:10Z" finished-at="2018-06-27T05:04:13Z">
-          <exception class="org.openqa.selenium.WebDriverException">
+        <test-method status="FAIL" signature="Enter_Payments()[pri:3, instance:testSuits.Instafin.TestSuit_BulkActions@6cd24612]" name="Enter_Payments" duration-ms="15666" started-at="2018-06-27T22:46:42Z" finished-at="2018-06-27T22:46:58Z">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[unknown error: Element <button type="submit" class="btn btn-primary right">...</button> is not clickable at point (170, 329). Other element would receive the click: <div class="blockUI blockOverlay" style="z-index: 2000; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(0, 0, 0); opacity: 0.6; cursor: wait; position: fixed;"></div>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//SPAN[@class='notif__message'][text()='The Repayment of PHP 6,772.10 and The Deposit of PHP 600.00 was successfully entered']"}
   (Session info: chrome=67.0.3396.99)
   (Driver info: chromedriver=2.39.562713 (dd642283e958a93ebf6891600db055f1f1b4f3b2),platform=Mac OS X 10.13.4 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
 System info: host: 'Mehedis-MacBook-Pro.local', ip: 'fe80:0:0:0:1c10:feb1:2d14:1e7a%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.4', java.version: '1.8.0_162'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.39.562713 (dd642283e958a9..., userDataDir: /var/folders/56/j_w144zj0wg...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 67.0.3396.99, webStorageEnabled: true}
-Session ID: 239df4cfeb396cd9c431b0c2d8b0daaa]]>
+Session ID: adae54402e6d50c9e4b1f162dc7e52c6
+*** Element info: {Using=xpath, value=//SPAN[@class='notif__message'][text()='The Repayment of PHP 6,772.10 and The Deposit of PHP 600.00 was successfully entered']}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: unknown error: Element <button type="submit" class="btn btn-primary right">...</button> is not clickable at point (170, 329). Other element would receive the click: <div class="blockUI blockOverlay" style="z-index: 2000; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(0, 0, 0); opacity: 0.6; cursor: wait; position: fixed;"></div>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//SPAN[@class='notif__message'][text()='The Repayment of PHP 6,772.10 and The Deposit of PHP 600.00 was successfully entered']"}
   (Session info: chrome=67.0.3396.99)
   (Driver info: chromedriver=2.39.562713 (dd642283e958a93ebf6891600db055f1f1b4f3b2),platform=Mac OS X 10.13.4 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
 System info: host: 'Mehedis-MacBook-Pro.local', ip: 'fe80:0:0:0:1c10:feb1:2d14:1e7a%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.4', java.version: '1.8.0_162'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.39.562713 (dd642283e958a9..., userDataDir: /var/folders/56/j_w144zj0wg...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 67.0.3396.99, webStorageEnabled: true}
-Session ID: 239df4cfeb396cd9c431b0c2d8b0daaa
+Session ID: adae54402e6d50c9e4b1f162dc7e52c6
+*** Element info: {Using=xpath, value=//SPAN[@class='notif__message'][text()='The Repayment of PHP 6,772.10 and The Deposit of PHP 600.00 was successfully entered']}
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -46,10 +50,15 @@ at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttp
 at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
-at pages.Instafin.Accounts.Page_Accounts_All_Accounts.SubmitFilter(Page_Accounts_All_Accounts.java:106)
-at testSuits.Instafin.TestSuit_Accounts.Filter_All_Accounts(TestSuit_Accounts.java:70)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:317)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:419)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:309)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy9.isDisplayed(Unknown Source)
+at pages.Instafin.BulkActions.Page_BulkActions_CombinedSheet.successfull_Verification(Page_BulkActions_CombinedSheet.java:211)
+at testSuits.Instafin.TestSuit_BulkActions.Enter_Payments(TestSuit_BulkActions.java:127)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -77,15 +86,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Filter_All_Accounts -->
-        <test-method status="PASS" signature="afterTesting()[pri:0, instance:testSuits.Instafin.TestSuit_Accounts@72c8e7b]" name="afterTesting" is-config="true" duration-ms="5043" started-at="2018-06-27T05:04:13Z" finished-at="2018-06-27T05:04:19Z">
+        </test-method> <!-- Enter_Payments -->
+        <test-method status="PASS" signature="afterTesting()[pri:0, instance:testSuits.Instafin.TestSuit_BulkActions@6cd24612]" name="afterTesting" is-config="true" duration-ms="2117" started-at="2018-06-27T22:46:58Z" finished-at="2018-06-27T22:47:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTesting -->
-      </class> <!-- testSuits.Instafin.TestSuit_Accounts -->
+      </class> <!-- testSuits.Instafin.TestSuit_BulkActions -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

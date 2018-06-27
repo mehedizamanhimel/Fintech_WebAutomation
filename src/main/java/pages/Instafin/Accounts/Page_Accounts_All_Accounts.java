@@ -3,6 +3,9 @@ package pages.Instafin.Accounts;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 public class Page_Accounts_All_Accounts {
@@ -30,8 +33,13 @@ public class Page_Accounts_All_Accounts {
 	By button_Print = By.id("print-html");
 	By filter_submit_Verify = By.cssSelector("div[id='hides-datatable-wrapper']");
 	
+	
+	@FindBy(css="#allAccounts > tbody > tr:nth-child(4) > td:nth-child(7) > a")
+	WebElement editButton;
+	
 	public Page_Accounts_All_Accounts(WebDriver driver) {
 		this.driver = driver;
+		PageFactory.initElements(driver, this);
 	}
 	
 	
@@ -109,6 +117,12 @@ public class Page_Accounts_All_Accounts {
 
 	public void Verify_FilterSubmission() {
 		driver.findElement(filter_submit_Verify).isDisplayed();
+	}
+
+
+	public void open_EditSection() {
+		editButton.click();
+		
 	}
 
 	
