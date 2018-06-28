@@ -47,7 +47,7 @@ public class TestSuit_BulkActions {
 	
 	
 	@Test(priority=4)
-	public void CreateLoans() throws InterruptedException {
+	public void CreateLoans_verify_CreatingLoans() throws InterruptedException {
 		bulk_CreateLone.click_BulkActions_MainButton();
 		Thread.sleep(1000);
 		bulk_CreateLone.open_CreateLone();
@@ -62,31 +62,41 @@ public class TestSuit_BulkActions {
 		Thread.sleep(1000);
 	}
 	
-	/*@Test
-	public void verify_Elements_displayed() throws InterruptedException {
+	@Test(priority=0)
+	public void CombineSheet_verify_Elements_Availability() throws InterruptedException {
 		bulk_CombineSheet.click_BulkActions_MainButton();
 		bulk_CombineSheet.verifybuttonavailable();	
-	}*/
+		bulk_CombineSheet.open_CombineSheet();
+		bulk_CombineSheet.verify_AllElements_Available_BeforeFilter();
+		bulk_CombineSheet.select_Branch();
+		bulk_CombineSheet.Submit_Filter();
+		bulk_CombineSheet.verify_AllElements_Available_AfterFilter();
+		driver.navigate().refresh();
+	}
 	
-	@Test(priority=0)
-	public void verifyErrorForBlankSubmission() {
+	
+	
+	@Test(priority=1)
+	public void CombineSheet_verifyErrorForBlankSubmission() {
 		bulk_CombineSheet.click_BulkActions_MainButton();
 		bulk_CombineSheet.open_CombineSheet();
 		bulk_CombineSheet.Submit_Filter();
 		bulk_CombineSheet.verifyErrorAfterSubmitFilter();
+		driver.navigate().refresh();
 	}
 	
-	@Test(priority=2)
+	@Test(priority=3)
 	public void Open_Combine_Sheet() throws InterruptedException{
 		bulk_CombineSheet.click_BulkActions_MainButton();
 		bulk_CombineSheet.open_CombineSheet();
 		bulk_CombineSheet.select_Branch();
 		bulk_CombineSheet.Submit_Filter();
 		bulk_CombineSheet.Verify_CombineSheet_Opening();
+		driver.navigate().refresh();
 	}
 	
 	
-	@Test(priority=3)
+	@Test(priority=4)
 	public void verify_Combine_Sheet_For_Bulk_Payments() throws InterruptedException {
 		bulk_CombineSheet.click_BulkActions_MainButton();
 		bulk_CombineSheet.verifybuttonavailable();
@@ -109,10 +119,48 @@ public class TestSuit_BulkActions {
 		bulk_CombineSheet.Deposite_Type();
 		Thread.sleep(1000);	
 		bulk_CombineSheet.Submit_Filter();
+		driver.navigate().refresh();
 	}
 	
-	@Test(priority=1)
-	public void Enter_Payments() throws InterruptedException {
+	@Test(priority=2)
+	public void CombineSheet_Enter_Payments() throws InterruptedException {
+		bulk_CombineSheet.click_BulkActions_MainButton();
+		bulk_CombineSheet.open_CombineSheet();
+		Thread.sleep(1000);
+		bulk_CombineSheet.select_Branch();
+		bulk_CombineSheet.Submit_Filter();
+		Thread.sleep(1000);
+		bulk_CombineSheet.select_CheckBOX_CLient();
+		bulk_CombineSheet.Enter_Payment();
+		Thread.sleep(1000);
+		bulk_CombineSheet.RePayment_Method();
+		bulk_CombineSheet.deposit_Payment_Method();
+		bulk_CombineSheet.input_referenceNumber();
+		bulk_CombineSheet.input_Note();	
+		Thread.sleep(1000);
+		driver.navigate().refresh();
+	}
+	
+	@Test(dependsOnMethods="CombineSheet_Enter_Payments")
+	public void CombineSheet_Enter_Payments_Repayment() throws InterruptedException {
+		bulk_CombineSheet.click_BulkActions_MainButton();
+		bulk_CombineSheet.open_CombineSheet();
+		Thread.sleep(1000);
+		bulk_CombineSheet.select_Branch();
+		bulk_CombineSheet.Submit_Filter();
+		Thread.sleep(1000);
+		bulk_CombineSheet.select_CheckBOX_CLient();
+		bulk_CombineSheet.Enter_Payment();
+		Thread.sleep(1000);
+		bulk_CombineSheet.RePayment_Method();
+		bulk_CombineSheet.input_referenceNumber();
+		bulk_CombineSheet.input_Note();	
+		Thread.sleep(1000);
+		driver.navigate().refresh();
+	}
+	
+	@Test(dependsOnMethods="CombineSheet_Enter_Payments_Repayment")
+	public void CombineSheet_Enter_Payments_Deposit() throws InterruptedException {
 		bulk_CombineSheet.click_BulkActions_MainButton();
 		bulk_CombineSheet.open_CombineSheet();
 		Thread.sleep(1000);
@@ -124,11 +172,11 @@ public class TestSuit_BulkActions {
 		Thread.sleep(1000);
 		bulk_CombineSheet.deposit_Payment_Method();
 		bulk_CombineSheet.input_referenceNumber();
-		bulk_CombineSheet.input_Note();
-		
-		
+		bulk_CombineSheet.input_Note();	
 		Thread.sleep(1000);
+		driver.navigate().refresh();
 	}
+	
 	
 	
 	@AfterTest

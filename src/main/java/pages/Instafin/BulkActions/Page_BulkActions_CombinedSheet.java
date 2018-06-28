@@ -39,12 +39,15 @@ public class Page_BulkActions_CombinedSheet {
 	By select_Centre = By.cssSelector("div[data-qa-element-id='organisationStructure.centre']");
 	By select_Product = By.cssSelector("div[data-qa-element-id='products']");
 	By select_Client = By.cssSelector("div[data-qa-element-id='clients']");
-	By depositeType = By.cssSelector("react-select-5--value");
+	By depositeType = By.cssSelector("div[data-qa-element-id='depositType']");
 	By tooltipSelectBranch = By.cssSelector("div[class='Tooltip__tip--JSFYh Tooltip__error--30ShZ']");
 	By clearDropDown = By.cssSelector("div:nth-child(2) > form > div > div:nth-child(2) > div > div:nth-child(1) > div > div:nth-child(2) > div > div > div > div > span.Select-clear-zone > span");
 	
 	By selectDepositMethod = By.cssSelector("div[data-qa-element-id='deposit.paymentMethod']");
 	By selectDepositMethodValue = By.cssSelector("#react-select-8--value > div.Select-placeholder");
+	
+	By selectRepaymentMethod = By.cssSelector("div[data-qa-element-id='repayment.paymentMethod']");
+	By selectRepaymentMethodValue = By.cssSelector("#react-select-14--value > div.Select-input");
 	
 	@FindBy(css="SPAN[CLASS='FormError__message--1VIpa FormError__error--1lqlb']")
 	WebElement errorNotification;
@@ -171,6 +174,14 @@ public class Page_BulkActions_CombinedSheet {
 		selectdepositMethod.click();
 		
 	}
+	
+	public void RePayment_Method() {
+		WebElement selectRePaymentValue = driver.findElement(selectRepaymentMethod).findElement(dropDown_values);
+		selectRePaymentValue.sendKeys("Cash-only Test");
+		WebElement selectRePaymentMethod = driver.findElement(selectRepaymentMethod).findElement(By.cssSelector(".Select-menu"));
+		selectRePaymentMethod.click();
+		
+	}
 
 	public void verifyErrorAfterSubmitFilter() {
 		errorNotification.isDisplayed();
@@ -213,6 +224,22 @@ public class Page_BulkActions_CombinedSheet {
 	public void successfull_Verification() {
 		successfulNotification.isDisplayed();
 		
+	}
+
+	public void verify_AllElements_Available_BeforeFilter() {
+		driver.findElement(dateSelect).isDisplayed();
+		driver.findElement(checkBox_ExcludeInArrears).isDisplayed();
+		driver.findElement(checkBox_PaidPrepaid).isDisplayed();
+		driver.findElement(select_Branch).isDisplayed();
+		driver.findElement(select_CreditOfficer).isDisplayed();
+		driver.findElement(select_Centre).isDisplayed();
+		driver.findElement(select_Product).isDisplayed();
+		driver.findElement(depositeType).isDisplayed();
+		//submitButton.isDisplayed();
+	}
+
+	public void verify_AllElements_Available_AfterFilter() {
+		combineSheetBody.isDisplayed();		
 	}
 
 }

@@ -6,7 +6,7 @@
       <class name="testSuits.Instafin.TestSuit_BulkActions">
         <methods>
           <include name="afterTesting"/>
-          <include name="verify_Combine_Sheet_For_Bulk_Payments"/>
+          <include name="CombineSheet_Enter_Payments"/>
           <include name="beforeTesting"/>
         </methods>
       </class> <!-- testSuits.Instafin.TestSuit_BulkActions -->
