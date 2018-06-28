@@ -76,7 +76,7 @@ public class TestSuit_BulkActions {
 		bulk_CombineSheet.verifyErrorAfterSubmitFilter();
 	}
 	
-	@Test(priority=1)
+	@Test(priority=2)
 	public void Open_Combine_Sheet() throws InterruptedException{
 		bulk_CombineSheet.click_BulkActions_MainButton();
 		bulk_CombineSheet.open_CombineSheet();
@@ -111,7 +111,7 @@ public class TestSuit_BulkActions {
 		bulk_CombineSheet.Submit_Filter();
 	}
 	
-	@Test(priority=2)
+	@Test(priority=1)
 	public void Enter_Payments() throws InterruptedException {
 		bulk_CombineSheet.click_BulkActions_MainButton();
 		bulk_CombineSheet.open_CombineSheet();
