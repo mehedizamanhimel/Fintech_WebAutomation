@@ -86,7 +86,7 @@ public class TestSuit_BulkActions {
 	}
 	
 	
-	//@Test(priority=2)
+	@Test(priority=3)
 	public void verify_Combine_Sheet_For_Bulk_Payments() throws InterruptedException {
 		bulk_CombineSheet.click_BulkActions_MainButton();
 		bulk_CombineSheet.verifybuttonavailable();
@@ -104,13 +104,14 @@ public class TestSuit_BulkActions {
 		Thread.sleep(1000);
 		bulk_CombineSheet.Select_Products();
 		Thread.sleep(1000);
-		bulk_CombineSheet.Select_Clients();
-		Thread.sleep(5000);
+		/*bulk_CombineSheet.Select_Clients();
+		Thread.sleep(5000);*/
 		bulk_CombineSheet.Deposite_Type();
-		Thread.sleep(1000);		
+		Thread.sleep(1000);	
+		bulk_CombineSheet.Submit_Filter();
 	}
 	
-	@Test(priority=3)
+	@Test(priority=2)
 	public void Enter_Payments() throws InterruptedException {
 		bulk_CombineSheet.click_BulkActions_MainButton();
 		bulk_CombineSheet.open_CombineSheet();
@@ -124,7 +125,7 @@ public class TestSuit_BulkActions {
 		bulk_CombineSheet.deposit_Payment_Method();
 		bulk_CombineSheet.input_referenceNumber();
 		bulk_CombineSheet.input_Note();
-		//bulk_CombineSheet.successfull_Verification();
+		
 		
 		Thread.sleep(1000);
 	}

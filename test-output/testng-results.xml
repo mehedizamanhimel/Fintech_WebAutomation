@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="3" total="4" passed="0">
+<testng-results skipped="0" failed="1" ignored="4" total="5" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="29471" started-at="2018-06-27T22:46:31Z" finished-at="2018-06-27T22:47:00Z">
+  <suite name="Default suite" duration-ms="26617" started-at="2018-06-28T05:04:28Z" finished-at="2018-06-28T05:04:54Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="29471" started-at="2018-06-27T22:46:31Z" finished-at="2018-06-27T22:47:00Z">
+    <test name="Default test" duration-ms="26617" started-at="2018-06-28T05:04:28Z" finished-at="2018-06-28T05:04:54Z">
       <class name="testSuits.Instafin.TestSuit_BulkActions">
-        <test-method status="PASS" signature="beforeTesting()[pri:0, instance:testSuits.Instafin.TestSuit_BulkActions@6cd24612]" name="beforeTesting" is-config="true" duration-ms="11671" started-at="2018-06-27T22:46:31Z" finished-at="2018-06-27T22:46:42Z">
+        <test-method status="PASS" signature="beforeTesting()[pri:0, instance:testSuits.Instafin.TestSuit_BulkActions@6cd24612]" name="beforeTesting" is-config="true" duration-ms="8496" started-at="2018-06-28T05:04:28Z" finished-at="2018-06-28T05:04:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTesting -->
-        <test-method status="FAIL" signature="Enter_Payments()[pri:3, instance:testSuits.Instafin.TestSuit_BulkActions@6cd24612]" name="Enter_Payments" duration-ms="15666" started-at="2018-06-27T22:46:42Z" finished-at="2018-06-27T22:46:58Z">
+        <test-method status="FAIL" signature="verify_Combine_Sheet_For_Bulk_Payments()[pri:3, instance:testSuits.Instafin.TestSuit_BulkActions@6cd24612]" name="verify_Combine_Sheet_For_Bulk_Payments" duration-ms="15992" started-at="2018-06-28T05:04:36Z" finished-at="2018-06-28T05:04:52Z">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//SPAN[@class='notif__message'][text()='The Repayment of PHP 6,772.10 and The Deposit of PHP 600.00 was successfully entered']"}
+              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":".Select-menu"}
   (Session info: chrome=67.0.3396.99)
   (Driver info: chromedriver=2.39.562713 (dd642283e958a93ebf6891600db055f1f1b4f3b2),platform=Mac OS X 10.13.4 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
-System info: host: 'Mehedis-MacBook-Pro.local', ip: 'fe80:0:0:0:1c10:feb1:2d14:1e7a%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.4', java.version: '1.8.0_162'
+System info: host: 'Mehedis-MacBook-Pro.local', ip: 'fe80:0:0:0:6:8555:146:4801%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.4', java.version: '1.8.0_162'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.39.562713 (dd642283e958a9..., userDataDir: /var/folders/56/j_w144zj0wg...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 67.0.3396.99, webStorageEnabled: true}
-Session ID: adae54402e6d50c9e4b1f162dc7e52c6
-*** Element info: {Using=xpath, value=//SPAN[@class='notif__message'][text()='The Repayment of PHP 6,772.10 and The Deposit of PHP 600.00 was successfully entered']}]]>
+Session ID: 1f688623e948f7c9dff7d2c019ff696e
+*** Element info: {Using=css selector, value=.Select-menu}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//SPAN[@class='notif__message'][text()='The Repayment of PHP 6,772.10 and The Deposit of PHP 600.00 was successfully entered']"}
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":".Select-menu"}
   (Session info: chrome=67.0.3396.99)
   (Driver info: chromedriver=2.39.562713 (dd642283e958a93ebf6891600db055f1f1b4f3b2),platform=Mac OS X 10.13.4 x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
-System info: host: 'Mehedis-MacBook-Pro.local', ip: 'fe80:0:0:0:1c10:feb1:2d14:1e7a%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.4', java.version: '1.8.0_162'
+System info: host: 'Mehedis-MacBook-Pro.local', ip: 'fe80:0:0:0:6:8555:146:4801%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.4', java.version: '1.8.0_162'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.39.562713 (dd642283e958a9..., userDataDir: /var/folders/56/j_w144zj0wg...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 67.0.3396.99, webStorageEnabled: true}
-Session ID: adae54402e6d50c9e4b1f162dc7e52c6
-*** Element info: {Using=xpath, value=//SPAN[@class='notif__message'][text()='The Repayment of PHP 6,772.10 and The Deposit of PHP 600.00 was successfully entered']}
+Session ID: 1f688623e948f7c9dff7d2c019ff696e
+*** Element info: {Using=css selector, value=.Select-menu}
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -50,15 +50,13 @@ at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttp
 at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:317)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:419)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:309)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy9.isDisplayed(Unknown Source)
-at pages.Instafin.BulkActions.Page_BulkActions_CombinedSheet.successfull_Verification(Page_BulkActions_CombinedSheet.java:211)
-at testSuits.Instafin.TestSuit_BulkActions.Enter_Payments(TestSuit_BulkActions.java:127)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
+at org.openqa.selenium.remote.RemoteWebElement.findElement(RemoteWebElement.java:179)
+at org.openqa.selenium.remote.RemoteWebElement.findElementByCssSelector(RemoteWebElement.java:244)
+at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
+at org.openqa.selenium.remote.RemoteWebElement.findElement(RemoteWebElement.java:175)
+at pages.Instafin.BulkActions.Page_BulkActions_CombinedSheet.Select_Products(Page_BulkActions_CombinedSheet.java:154)
+at testSuits.Instafin.TestSuit_BulkActions.verify_Combine_Sheet_For_Bulk_Payments(TestSuit_BulkActions.java:105)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -89,8 +87,8 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Enter_Payments -->
-        <test-method status="PASS" signature="afterTesting()[pri:0, instance:testSuits.Instafin.TestSuit_BulkActions@6cd24612]" name="afterTesting" is-config="true" duration-ms="2117" started-at="2018-06-27T22:46:58Z" finished-at="2018-06-27T22:47:00Z">
+        </test-method> <!-- verify_Combine_Sheet_For_Bulk_Payments -->
+        <test-method status="PASS" signature="afterTesting()[pri:0, instance:testSuits.Instafin.TestSuit_BulkActions@6cd24612]" name="afterTesting" is-config="true" duration-ms="2114" started-at="2018-06-28T05:04:52Z" finished-at="2018-06-28T05:04:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTesting -->

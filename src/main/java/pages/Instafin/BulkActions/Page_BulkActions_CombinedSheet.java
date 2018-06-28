@@ -115,25 +115,26 @@ public class Page_BulkActions_CombinedSheet {
 	}
 
 	public void check_Exclude_Arrears() {
-		// TODO Auto-generated method stub
+		driver.findElement(checkBox_ExcludeInArrears).click();
 		
 	}
 
 	public void checl_Inlude_Paid_Prepaid() {
-		// TODO Auto-generated method stub
+		driver.findElement(checkBox_PaidPrepaid).click();
 		
 	}
 
-	public void Select_Credit_Officer() {
+	public void Select_Credit_Officer() throws InterruptedException {
 		WebElement selectBranchValue = driver.findElement(select_CreditOfficer).findElement(dropDown_values);
-		selectBranchValue.sendKeys("Name 1026 Surname 1026");
+		selectBranchValue.sendKeys("Name 1029 Surname 1029");
+		//Thread.sleep(1000);
 		WebElement selectOptionCreditOfficer = driver.findElement(select_CreditOfficer).findElement(By.cssSelector(".Select-menu"));
         selectOptionCreditOfficer.click();
 	}
 
 	public void Select_Centre() {
 		WebElement selectBranchValue = driver.findElement(select_Centre).findElement(dropDown_values);
-		selectBranchValue.sendKeys("Centre 1005");
+		selectBranchValue.sendKeys("Without Centre");
 		WebElement selectOptionCentre = driver.findElement(select_Centre).findElement(By.cssSelector(".Select-menu"));
 		selectOptionCentre.click();
 	}
@@ -148,15 +149,17 @@ public class Page_BulkActions_CombinedSheet {
 
 	public void Select_Products() {
 		WebElement selectBranchValue = driver.findElement(select_Product).findElement(dropDown_values);
-		selectBranchValue.sendKeys("Product 1007");
-		WebElement selectProducts = driver.findElement(select_Product).findElement(By.cssSelector(".Select-menu"));
-		selectProducts.click();
+		selectBranchValue.sendKeys("Product 1001");
+		/*WebElement selectProducts = driver.findElement(select_Product).findElement(By.cssSelector(".Select-menu"));
+		selectProducts.click();*/
+		
 	}
 
 	public void Select_Clients() throws InterruptedException {
 		WebElement selectBranchValue = driver.findElement(select_Client).findElement(dropDown_values);
 		selectBranchValue.sendKeys("Client 1418");
-		WebElement selectClients = driver.findElement(select_Client).findElement(By.cssSelector(".Select-value-label"));
+		WebElement selectClients = driver.findElement(select_Client).findElement(By.cssSelector(".Select-menu"));
+		//WebElement selectClients = driver.findElement(select_Client).findElement(By.cssSelector(".Select-value-label"));
 		selectClients.click();
 	}
 	
