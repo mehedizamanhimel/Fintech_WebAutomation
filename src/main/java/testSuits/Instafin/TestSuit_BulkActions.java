@@ -130,52 +130,17 @@ public class TestSuit_BulkActions {
 		bulk_CombineSheet.select_Branch();
 		bulk_CombineSheet.Submit_Filter();
 		Thread.sleep(1000);
-		bulk_CombineSheet.select_CheckBOX_CLient();
+		bulk_CombineSheet.select_CheckBOX_CLient_ALL();
 		bulk_CombineSheet.Enter_Payment();
 		Thread.sleep(1000);
-		bulk_CombineSheet.RePayment_Method();
-		bulk_CombineSheet.deposit_Payment_Method();
+		bulk_CombineSheet.Payment_Method_Repayment_Deposit();
 		bulk_CombineSheet.input_referenceNumber();
 		bulk_CombineSheet.input_Note();	
 		Thread.sleep(1000);
 		driver.navigate().refresh();
 	}
 	
-	@Test(dependsOnMethods="CombineSheet_Enter_Payments")
-	public void CombineSheet_Enter_Payments_Repayment() throws InterruptedException {
-		bulk_CombineSheet.click_BulkActions_MainButton();
-		bulk_CombineSheet.open_CombineSheet();
-		Thread.sleep(1000);
-		bulk_CombineSheet.select_Branch();
-		bulk_CombineSheet.Submit_Filter();
-		Thread.sleep(1000);
-		bulk_CombineSheet.select_CheckBOX_CLient();
-		bulk_CombineSheet.Enter_Payment();
-		Thread.sleep(1000);
-		bulk_CombineSheet.RePayment_Method();
-		bulk_CombineSheet.input_referenceNumber();
-		bulk_CombineSheet.input_Note();	
-		Thread.sleep(1000);
-		driver.navigate().refresh();
-	}
 	
-	@Test(dependsOnMethods="CombineSheet_Enter_Payments_Repayment")
-	public void CombineSheet_Enter_Payments_Deposit() throws InterruptedException {
-		bulk_CombineSheet.click_BulkActions_MainButton();
-		bulk_CombineSheet.open_CombineSheet();
-		Thread.sleep(1000);
-		bulk_CombineSheet.select_Branch();
-		bulk_CombineSheet.Submit_Filter();
-		Thread.sleep(1000);
-		bulk_CombineSheet.select_CheckBOX_CLient();
-		bulk_CombineSheet.Enter_Payment();
-		Thread.sleep(1000);
-		bulk_CombineSheet.deposit_Payment_Method();
-		bulk_CombineSheet.input_referenceNumber();
-		bulk_CombineSheet.input_Note();	
-		Thread.sleep(1000);
-		driver.navigate().refresh();
-	}
 	
 	
 	

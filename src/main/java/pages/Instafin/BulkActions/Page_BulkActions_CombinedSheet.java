@@ -58,6 +58,9 @@ public class Page_BulkActions_CombinedSheet {
 	@FindBy(css="div[class='box__box--3I4zq']")
 	WebElement combineSheetBody;
 	
+	@FindBy(xpath="(//INPUT[@type='checkbox'])[3]")
+	WebElement checkboxClientALL;	
+	
 	@FindBy(xpath="(//INPUT[@type='checkbox'])[4]")
 	WebElement checkboxClient;
 	
@@ -106,7 +109,7 @@ public class Page_BulkActions_CombinedSheet {
         selectOption.click();*/
 		
 		WebElement selectBranchValue = driver.findElement(select_Branch).findElement(dropDown_values);
-		selectBranchValue.sendKeys("Branch 1007");
+		selectBranchValue.sendKeys("Branch 1012");
 		WebElement selectOptionBranch = driver.findElement(select_Branch).findElement(By.cssSelector(".Select-menu"));
         selectOptionBranch.click();
 		
@@ -167,11 +170,45 @@ public class Page_BulkActions_CombinedSheet {
 	}
 	
 
-	public void deposit_Payment_Method() {
-		WebElement selectdepositValue = driver.findElement(selectDepositMethod).findElement(dropDown_values);
+	public void Payment_Method_Repayment_Deposit() {
+		
+		//This is the last stable code
+		/*WebElement selectdepositValue = driver.findElement(selectDepositMethod).findElement(dropDown_values);
 		selectdepositValue.sendKeys("Cash-only Test");
 		WebElement selectdepositMethod = driver.findElement(selectDepositMethod).findElement(By.cssSelector(".Select-menu"));
-		selectdepositMethod.click();
+		selectdepositMethod.click();*/
+		
+		
+		//Implementation of deposit & repayment
+		
+		if (driver.findElement(selectDepositMethod).isDisplayed() && driver.findElement(selectRepaymentMethod).isDisplayed()) {
+			WebElement selectRePaymentValue = driver.findElement(selectRepaymentMethod).findElement(dropDown_values);
+			selectRePaymentValue.sendKeys("Cash-only Test");
+			WebElement selectRePaymentMethod = driver.findElement(selectRepaymentMethod).findElement(By.cssSelector(".Select-menu"));
+			selectRePaymentMethod.click();
+			
+			WebElement selectdepositValue = driver.findElement(selectDepositMethod).findElement(dropDown_values);
+			selectdepositValue.sendKeys("Cash-only Test");
+			WebElement selectdepositMethod = driver.findElement(selectDepositMethod).findElement(By.cssSelector(".Select-menu"));
+			selectdepositMethod.click();
+			
+		} 
+		else if(driver.findElement(selectRepaymentMethod).isDisplayed())
+		{
+			WebElement selectRePaymentValue = driver.findElement(selectRepaymentMethod).findElement(dropDown_values);
+			selectRePaymentValue.sendKeys("Cash-only Test");
+			WebElement selectRePaymentMethod = driver.findElement(selectRepaymentMethod).findElement(By.cssSelector(".Select-menu"));
+			selectRePaymentMethod.click();
+		}
+		else if(driver.findElement(selectDepositMethod).isDisplayed()) {
+			WebElement selectdepositValue = driver.findElement(selectDepositMethod).findElement(dropDown_values);
+			selectdepositValue.sendKeys("Cash-only Test");
+			WebElement selectdepositMethod = driver.findElement(selectDepositMethod).findElement(By.cssSelector(".Select-menu"));
+			selectdepositMethod.click();
+		}
+		else {
+			driver.switchTo().activeElement();
+		}
 		
 	}
 	
@@ -240,6 +277,12 @@ public class Page_BulkActions_CombinedSheet {
 
 	public void verify_AllElements_Available_AfterFilter() {
 		combineSheetBody.isDisplayed();		
+	}
+
+	public void select_CheckBOX_CLient_ALL() {
+		checkboxClientALL.click();
+		body.sendKeys(Keys.PAGE_DOWN);
+		
 	}
 
 }
