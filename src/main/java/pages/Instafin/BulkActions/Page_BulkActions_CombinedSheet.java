@@ -212,12 +212,32 @@ public class Page_BulkActions_CombinedSheet {
 		
 	}
 	
+	public void deposit_Payment_Method() {
+		if(driver.findElement(selectDepositMethod).isDisplayed()) {
+			WebElement selectdepositValue = driver.findElement(selectDepositMethod).findElement(dropDown_values);
+			selectdepositValue.sendKeys("Cash-only Test");
+			WebElement selectdepositMethod = driver.findElement(selectDepositMethod).findElement(By.cssSelector(".Select-menu"));
+			selectdepositMethod.click();
+		}
+		else
+		{
+			driver.switchTo().activeElement();
+		}
+	}
+	
 	public void RePayment_Method() {
-		WebElement selectRePaymentValue = driver.findElement(selectRepaymentMethod).findElement(dropDown_values);
-		selectRePaymentValue.sendKeys("Cash-only Test");
-		WebElement selectRePaymentMethod = driver.findElement(selectRepaymentMethod).findElement(By.cssSelector(".Select-menu"));
-		selectRePaymentMethod.click();
 		
+		if(driver.findElement(selectRepaymentMethod).isDisplayed())
+		{
+			WebElement selectRePaymentValue = driver.findElement(selectRepaymentMethod).findElement(dropDown_values);
+			selectRePaymentValue.sendKeys("Cash-only Test");
+			WebElement selectRePaymentMethod = driver.findElement(selectRepaymentMethod).findElement(By.cssSelector(".Select-menu"));
+			selectRePaymentMethod.click();
+		}
+		else
+		{
+			driver.switchTo().activeElement();
+		}
 	}
 
 	public void verifyErrorAfterSubmitFilter() {
@@ -249,8 +269,9 @@ public class Page_BulkActions_CombinedSheet {
 		
 	}
 
-	public void input_Note() {
+	public void input_Note() throws InterruptedException {
 		note.sendKeys("sample Note");	
+		Thread.sleep(10000);
 		note.submit();
 	}
 

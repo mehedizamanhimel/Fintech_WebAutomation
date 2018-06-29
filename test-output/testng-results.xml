@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="1" ignored="5" total="6" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="27674" started-at="2018-06-29T02:05:26Z" finished-at="2018-06-29T02:05:54Z">
+  <suite name="Default suite" duration-ms="27725" started-at="2018-06-29T02:26:59Z" finished-at="2018-06-29T02:27:27Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="27674" started-at="2018-06-29T02:05:26Z" finished-at="2018-06-29T02:05:54Z">
+    <test name="Default test" duration-ms="27725" started-at="2018-06-29T02:26:59Z" finished-at="2018-06-29T02:27:27Z">
       <class name="testSuits.Instafin.TestSuit_BulkActions">
-        <test-method status="PASS" signature="beforeTesting()[pri:0, instance:testSuits.Instafin.TestSuit_BulkActions@6cd24612]" name="beforeTesting" is-config="true" duration-ms="10429" started-at="2018-06-29T02:05:26Z" finished-at="2018-06-29T02:05:37Z">
+        <test-method status="PASS" signature="beforeTesting()[pri:0, instance:testSuits.Instafin.TestSuit_BulkActions@6cd24612]" name="beforeTesting" is-config="true" duration-ms="10533" started-at="2018-06-29T02:26:59Z" finished-at="2018-06-29T02:27:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTesting -->
-        <test-method status="FAIL" signature="CombineSheet_Enter_Payments()[pri:2, instance:testSuits.Instafin.TestSuit_BulkActions@6cd24612]" name="CombineSheet_Enter_Payments" duration-ms="15109" started-at="2018-06-29T02:05:37Z" finished-at="2018-06-29T02:05:52Z">
+        <test-method status="FAIL" signature="CombineSheet_Enter_Payments()[pri:2, instance:testSuits.Instafin.TestSuit_BulkActions@6cd24612]" name="CombineSheet_Enter_Payments" duration-ms="15067" started-at="2018-06-29T02:27:10Z" finished-at="2018-06-29T02:27:25Z">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"div[data-qa-element-id='repayment.paymentMethod']"}
@@ -23,7 +23,7 @@ Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.1
 System info: host: 'Mehedis-MacBook-Pro.local', ip: 'fe80:0:0:0:10ec:86c7:2d5d:208a%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.4', java.version: '1.8.0_162'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.39.562713 (dd642283e958a9..., userDataDir: /var/folders/56/j_w144zj0wg...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 67.0.3396.99, webStorageEnabled: true}
-Session ID: 4eef26095a4ad5a54934b34d915a6a18
+Session ID: 920e3a1e6d12f2aea79938d4f0cce279
 *** Element info: {Using=css selector, value=div[data-qa-element-id='repayment.paymentMethod']}]]>
             </message>
             <full-stacktrace>
@@ -36,7 +36,7 @@ Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.1
 System info: host: 'Mehedis-MacBook-Pro.local', ip: 'fe80:0:0:0:10ec:86c7:2d5d:208a%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.4', java.version: '1.8.0_162'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.39.562713 (dd642283e958a9..., userDataDir: /var/folders/56/j_w144zj0wg...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 67.0.3396.99, webStorageEnabled: true}
-Session ID: 4eef26095a4ad5a54934b34d915a6a18
+Session ID: 920e3a1e6d12f2aea79938d4f0cce279
 *** Element info: {Using=css selector, value=div[data-qa-element-id='repayment.paymentMethod']}
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
@@ -54,7 +54,7 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:411)
 at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:309)
-at pages.Instafin.BulkActions.Page_BulkActions_CombinedSheet.Payment_Method_Repayment_Deposit(Page_BulkActions_CombinedSheet.java:184)
+at pages.Instafin.BulkActions.Page_BulkActions_CombinedSheet.RePayment_Method(Page_BulkActions_CombinedSheet.java:229)
 at testSuits.Instafin.TestSuit_BulkActions.CombineSheet_Enter_Payments(TestSuit_BulkActions.java:136)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -87,7 +87,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CombineSheet_Enter_Payments -->
-        <test-method status="PASS" signature="afterTesting()[pri:0, instance:testSuits.Instafin.TestSuit_BulkActions@6cd24612]" name="afterTesting" is-config="true" duration-ms="2120" started-at="2018-06-29T02:05:52Z" finished-at="2018-06-29T02:05:54Z">
+        <test-method status="PASS" signature="afterTesting()[pri:0, instance:testSuits.Instafin.TestSuit_BulkActions@6cd24612]" name="afterTesting" is-config="true" duration-ms="2109" started-at="2018-06-29T02:27:25Z" finished-at="2018-06-29T02:27:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTesting -->
