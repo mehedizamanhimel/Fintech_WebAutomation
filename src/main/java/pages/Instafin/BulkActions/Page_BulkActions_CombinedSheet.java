@@ -109,7 +109,7 @@ public class Page_BulkActions_CombinedSheet {
         selectOption.click();*/
 		
 		WebElement selectBranchValue = driver.findElement(select_Branch).findElement(dropDown_values);
-		selectBranchValue.sendKeys("Branch 1012");
+		selectBranchValue.sendKeys("Branch 1049");
 		WebElement selectOptionBranch = driver.findElement(select_Branch).findElement(By.cssSelector(".Select-menu"));
         selectOptionBranch.click();
 		
@@ -181,7 +181,7 @@ public class Page_BulkActions_CombinedSheet {
 		
 		//Implementation of deposit & repayment
 		
-		if (driver.findElement(selectDepositMethod).isDisplayed() && driver.findElement(selectRepaymentMethod).isDisplayed()) {
+		/*if (driver.findElement(selectDepositMethod).isDisplayed() && driver.findElement(selectRepaymentMethod).isDisplayed()) {
 			WebElement selectRePaymentValue = driver.findElement(selectRepaymentMethod).findElement(dropDown_values);
 			selectRePaymentValue.sendKeys("Cash-only Test");
 			WebElement selectRePaymentMethod = driver.findElement(selectRepaymentMethod).findElement(By.cssSelector(".Select-menu"));
@@ -208,6 +208,30 @@ public class Page_BulkActions_CombinedSheet {
 		}
 		else {
 			driver.switchTo().activeElement();
+		}*/
+		
+		/*try {
+			
+		} catch (Exception e) {
+			System.out.println("Sample print if no repayment or deposit field available");
+		}
+		*/
+		try {
+			WebElement selectRePaymentValue = driver.findElement(selectRepaymentMethod).findElement(dropDown_values);
+			selectRePaymentValue.sendKeys("Cash-only Test");
+			WebElement selectRePaymentMethod = driver.findElement(selectRepaymentMethod).findElement(By.cssSelector(".Select-menu"));
+			selectRePaymentMethod.click();
+		} catch (Exception e) {
+			System.out.println("Sample print if no repayment field available");
+		}
+		
+		try {
+			WebElement selectdepositValue = driver.findElement(selectDepositMethod).findElement(dropDown_values);
+			selectdepositValue.sendKeys("Cash-only Test");
+			WebElement selectdepositMethod = driver.findElement(selectDepositMethod).findElement(By.cssSelector(".Select-menu"));
+			selectdepositMethod.click();
+		} catch (Exception e) {
+			System.out.println("Sample print if no deposit field available");
 		}
 		
 	}
