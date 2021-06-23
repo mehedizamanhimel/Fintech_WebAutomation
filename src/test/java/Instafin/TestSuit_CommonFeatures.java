@@ -1,4 +1,4 @@
-package testSuits.Instafin;
+package Instafin;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -11,19 +11,18 @@ import org.testng.annotations.Test;
 
 import pages.Instafin.Page_DashBoard;
 import pages.Instafin.Page_loginPage;
-import pages.Instafin.Administration.Page_Administration_Users_Users;
 import utils.LoadPropertiesFile_Instafin;
+import pages.Instafin.Page_For_CommonFeatures_Optional;
 
-public class TestSuit_Administration {
+public class TestSuit_CommonFeatures {
 	
 	static LoadPropertiesFile_Instafin testData;
 	
 	WebDriver driver = new ChromeDriver();
 	String baseurl = "https://meheditest.instafin.info/user/login";
 	Page_loginPage login_PageElements = new Page_loginPage(driver);
-	Page_DashBoard homePageElements = new Page_DashBoard(driver);
-	Page_Administration_Users_Users administration_PageElements = new Page_Administration_Users_Users(driver);
-	
+	Page_DashBoard homePage_Elements = new Page_DashBoard(driver);
+	Page_For_CommonFeatures_Optional common_PageElements = new Page_For_CommonFeatures_Optional(driver);
 	
 	@BeforeTest
 	public void beforeTesting() throws IOException {
@@ -34,12 +33,12 @@ public class TestSuit_Administration {
 		login_PageElements.inputUserName(testData.properties.getProperty("username"));
 		login_PageElements.inputPassword(testData.properties.getProperty("password"));
 		login_PageElements.clickOnLoginButton();
-		homePageElements.verifyLogin();
+		homePage_Elements.verifyLogin();
 	}
 	
 	//Area to write automated test cases using TestNG framework
 	@Test
-	public void verify_elements_visibility() {
+	public void verify_Elements_displayed() {
 		
 	}
 	

@@ -1,4 +1,4 @@
-package testSuits.Instafin;
+package Instafin;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;

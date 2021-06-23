@@ -1,4 +1,4 @@
-package testSuits.Instafin;
+package Instafin;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -10,19 +10,21 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import pages.Instafin.Page_DashBoard;
-import pages.Instafin.Page_OfflineTransactions;
+import pages.Instafin.Page_Tasks_AllTasks;
+import pages.Instafin.Page_Tasks_CreateTask;
 import pages.Instafin.Page_loginPage;
 import utils.LoadPropertiesFile_Instafin;
 
-public class TestSuit_Offline_Transactions {
+public class TestSuit_Tasks {
 	
 	static LoadPropertiesFile_Instafin testData;
 	
 	WebDriver driver = new ChromeDriver();
-	//String baseurl = "https://meheditest.instafin.info/user/login";
+	
 	Page_loginPage login_PageElements = new Page_loginPage(driver);
 	Page_DashBoard homePage_Elements = new Page_DashBoard(driver);
-	Page_OfflineTransactions offline_Transaction_PageElements = new Page_OfflineTransactions(driver);
+	Page_Tasks_AllTasks allTask_Page = new Page_Tasks_AllTasks(driver);
+	Page_Tasks_CreateTask createTask_Page = new Page_Tasks_CreateTask(driver);
 
 	
 	@BeforeTest
@@ -39,17 +41,11 @@ public class TestSuit_Offline_Transactions {
 	
 	//Area to write automated test cases using TestNG framework
 	@Test
-	public void verify_Offline_Transaction_Filter_Working() throws InterruptedException {
-		offline_Transaction_PageElements.open_Main_Button();
-		offline_Transaction_PageElements.select_Level_Type();
-		Thread.sleep(1000);
-		offline_Transaction_PageElements.select_Level();
-		Thread.sleep(1000);
-		offline_Transaction_PageElements.select_date();
-		Thread.sleep(1000);
-		offline_Transaction_PageElements.submit_Filter();
-		Thread.sleep(1000);
-		offline_Transaction_PageElements.verify_filter_is_working();
+	public void Verify_task_feature_links() throws InterruptedException {
+		allTask_Page.Click_Task_mainMenu_button();
+		allTask_Page.Open_CreateTask();
+		allTask_Page.Open_AllTasks();
+		
 	}
 	
 	
@@ -58,7 +54,7 @@ public class TestSuit_Offline_Transactions {
 	@AfterTest
 	public void afterTesting() throws InterruptedException {
 		Thread.sleep(5000);
+		//login_PageElements.logoutFromApp();
 		driver.close();
 	}
-	
 }

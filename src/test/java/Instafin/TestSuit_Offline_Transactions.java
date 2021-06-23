@@ -1,4 +1,4 @@
-package testSuits.Instafin;
+package Instafin;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -10,24 +10,20 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import pages.Instafin.Page_DashBoard;
-import pages.Instafin.Page_Teller_TellerAccounts;
-import pages.Instafin.Page_Teller_TransactionReports;
+import pages.Instafin.Page_OfflineTransactions;
 import pages.Instafin.Page_loginPage;
 import utils.LoadPropertiesFile_Instafin;
 
-public class TestSuit_Teller {
+public class TestSuit_Offline_Transactions {
 	
 	static LoadPropertiesFile_Instafin testData;
 	
 	WebDriver driver = new ChromeDriver();
 	//String baseurl = "https://meheditest.instafin.info/user/login";
-	
-	
 	Page_loginPage login_PageElements = new Page_loginPage(driver);
 	Page_DashBoard homePage_Elements = new Page_DashBoard(driver);
-	Page_Teller_TellerAccounts tellerAccount_Page = new Page_Teller_TellerAccounts(driver);
-	Page_Teller_TransactionReports tellerTransactionReport_Page = new Page_Teller_TransactionReports(driver);
-	
+	Page_OfflineTransactions offline_Transaction_PageElements = new Page_OfflineTransactions(driver);
+
 	
 	@BeforeTest
 	public void beforeTesting() throws IOException {
@@ -39,13 +35,21 @@ public class TestSuit_Teller {
 		login_PageElements.inputPassword(testData.properties.getProperty("password"));
 		login_PageElements.clickOnLoginButton();
 		homePage_Elements.verifyLogin();
-		
 	}
 	
 	//Area to write automated test cases using TestNG framework
 	@Test
-	public void verify_Elements_displayed() {
-		
+	public void verify_Offline_Transaction_Filter_Working() throws InterruptedException {
+		offline_Transaction_PageElements.open_Main_Button();
+		offline_Transaction_PageElements.select_Level_Type();
+		Thread.sleep(1000);
+		offline_Transaction_PageElements.select_Level();
+		Thread.sleep(1000);
+		offline_Transaction_PageElements.select_date();
+		Thread.sleep(1000);
+		offline_Transaction_PageElements.submit_Filter();
+		Thread.sleep(1000);
+		offline_Transaction_PageElements.verify_filter_is_working();
 	}
 	
 	
@@ -54,8 +58,7 @@ public class TestSuit_Teller {
 	@AfterTest
 	public void afterTesting() throws InterruptedException {
 		Thread.sleep(5000);
-		login_PageElements.logoutFromApp();
 		driver.close();
 	}
-
+	
 }

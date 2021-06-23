@@ -6,7 +6,7 @@
     <groups>
     </groups>
     <test name="Default test" duration-ms="39727" started-at="2018-07-01T02:35:57Z" finished-at="2018-07-01T02:36:37Z">
-      <class name="testSuits.Instafin.TestSuit_BulkActions">
+      <class name="Instafin.TestSuit_BulkActions">
         <test-method status="PASS" signature="beforeTesting()[pri:0, instance:testSuits.Instafin.TestSuit_BulkActions@6cd24612]" name="beforeTesting" is-config="true" duration-ms="10301" started-at="2018-07-01T02:35:57Z" finished-at="2018-07-01T02:36:08Z">
           <reporter-output>
           </reporter-output>
